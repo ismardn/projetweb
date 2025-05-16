@@ -2,53 +2,69 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Préserver nos océans</title>
-        <link rel="stylesheet" href="css/index.css">
-        <script src="js/main.js" defer></script>
-        <link rel="icon" type="image/png" href="assets/images/logo.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Préserver nos océans | Accueil</title>
+        <link rel="icon" type="image/png" href="./assets/images/logo.png">
+
+        <link rel="stylesheet" href="./css/layout.css">
+        <link rel="stylesheet" href="./css/index.css">
+
+        <script src="./js/main.js" defer></script>
     </head>
 
     <body>
         <header>
-            <h1>L'océan en danger : comprendre, agir, préserver</h1>
+            <div class="main-title-div">
+                <h1>L'océan en danger : comprendre, agir, préserver</h1>
+            </div>
+
+            <nav>
+                <a href="./index.html">Accueil</a>
+                <a href="./ecosystems.html">Écosystèmes</a>
+                <a href="./pollution.html">Pollution</a>
+                <a href="./funfacts.html">Faits Insolites</a>
+                <a href="./quiz.html">Quiz</a>
+            </nav>
         </header>
 
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="ecosystems.html">Écosystèmes</a>
-            <a href="pollution.html">Pollution</a>
-            <a href="funfacts.html">Faits Insolites</a>
-            <a href="quiz.html">Quiz</a>
-        </nav>
-
         <div class="intro">
-            <h2>Titre</h2>
-            <p>Paragraphe</p>
+            <h2>Bienvenue sur notre site !</h2>
+            <p>
+                Chaque jour, nos océans subissent les conséquences de nos choix : pollution plastique,
+                destruction des écosystèmes, réchauffement climatique. Ce site a été créé pour sensibiliser, informer
+                et encourager chacun à agir. Grâce à des ressources simples et accessibles, nous vous aidons à
+                comprendre les enjeux marins, découvrir la beauté des fonds sous-marins, et tester vos connaissances.
+                Ensemble, contribuons à protéger ce patrimoine essentiel à toute forme de vie sur Terre.
+            </p>
         </div>
 
-        <div class="grid">
-            <div class="card">
-                <video src="assets/videos/ecosystems_video.mp4" muted loop></video>
-                <h3>Écosystèmes</h3>
+        <div class="videos-area">
+            <div class="card" onclick="location.href='ecosystems.html'" onmouseover="playVideo(this)" onmouseout="pauseVideo(this)">
+                <video src="./assets/videos/ecosystems_video.mp4" muted loop></video>
+                <h3 class="text-eco">Écosystèmes</h3>
             </div>
-            <div class="card">
-                <video src="assets/videos/pollution_video.mp4" muted loop></video>
-                <h3>Pollution</h3>
+
+            <div class="card" onclick="location.href='pollution.html'" onmouseover="playVideo(this)" onmouseout="pauseVideo(this)">
+                <video src="./assets/videos/pollution_video.mp4" muted loop></video>
+                <h3 class="text-pollution">Pollution</h3>
             </div>
-            <div class="card">
-                <video src="assets/videos/funfacts_video.mp4" muted loop></video>
-                <h3>Faits Insolites</h3>
+
+            <div class="card" onclick="location.href='funfacts.html'" onmouseover="playVideo(this)" onmouseout="pauseVideo(this)">
+                <video src="./assets/videos/funfacts_video.mp4" muted loop></video>
+                <h3 class="text-funfacts">Faits Insolites</h3>
             </div>
-            <div class="card">
-                <video src="assets/videos/quiz_video.mp4" muted loop></video>
-                <h3>Quiz</h3>
-        </div>
+
+            <div class="card" onclick="location.href='quiz.html'" onmouseover="playVideo(this)" onmouseout="pauseVideo(this)">
+                <video src="./assets/videos/quiz_video.mp4" muted loop></video>
+                <h3 class="text-quiz">Quiz</h3>
+            </div>
         </div>
 
         <p class="video-credit">Vidéos générées par Sora - OpenAI</p>
 
         <footer>
-            <p><a href="about.html">À propos</a></p>
+            <p><a href="./about.html">À propos</a></p>
         </footer>
     </body>
 </html>
