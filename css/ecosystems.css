@@ -1,0 +1,225 @@
+body {
+    background: url('../assets/images/default_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.intro {
+    max-width: 800px;
+    margin: 20px auto 30px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 20px 25px 15px 25px;
+    text-align: center;
+}
+
+.intro p.intro-italic {
+    font-style: italic;
+    color: #145bc5;
+    font-size: 1.4em; 
+    margin-bottom: 10px;
+}
+
+.intro p {
+    color: #145bc5;
+    font-size: 1em; 
+}
+
+.eco-content p {
+    color: #2574a9; 
+    font-size: 1.08em;
+    line-height: 1.6;
+    margin-bottom: 0.7em;
+}
+
+.intro h2 {
+    color: #1a4e6c;
+    margin-bottom: 10px;
+}
+
+.eco-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.eco-card {
+    background: transparent;
+    border-radius: 14px;
+    width: 320px;
+    height: 450px;
+    perspective: 1200px;
+    outline: none;
+    margin-bottom: 20px;
+    box-shadow: none;
+    padding: 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+.eco-card:hover, .eco-card:focus {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px #0003;
+}
+
+.eco-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(.4,2,.6,1);
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    overflow: visible;
+}
+
+.eco-card.flipped .eco-card-inner {
+    transform: rotateY(180deg);
+}
+
+.eco-card-front, .eco-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px #0002;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transform: translateZ(0);
+    pointer-events: none;
+}
+
+.eco-card:not(.flipped) .eco-card-front {
+    pointer-events: auto;
+}
+
+.eco-card.flipped .eco-card-back {
+    pointer-events: auto;
+}
+
+.eco-card-back {
+    transform: rotateY(180deg);
+    padding-top: 30px;
+}
+
+.eco-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px 14px 0 0;
+}
+
+.eco-content {
+    padding: 10px 20px 25px;
+    text-align: center;
+    position: relative;
+    height: calc(100% - 180px - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+
+.eco-content h3 {
+    color: #2176ae;
+    margin-bottom: 8px;
+}
+
+.eco-btn {
+    margin: 15px auto 20px auto;
+    background: #2176ae;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
+    display: inline-block;
+    position: relative;
+    align-self: center;
+    box-shadow: 0 4px 16px #0002;
+}
+
+.eco-btn:hover, .eco-btn:focus {
+    background: #1a4e6c;
+}
+
+.eco-card-front .eco-btn{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -40px;
+    z-index: 2;
+    box-shadow: 0 4px 16px #0002;
+}
+.eco-card-back .eco-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -220px;
+    z-index: 2;
+    box-shadow: 0 4px 16px #0002;
+}
+
+.eco-fact {
+    display: block;
+    margin-top: 10px;
+    color: #0b5c2c;
+    font-style: italic;
+    min-height: 22px;
+}
+
+.eco-actions {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 20px 25px 15px 25px;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.eco-actions h2 {
+    color: #1a4e6c;
+    margin-bottom: 12px;
+}
+
+.eco-actions ul {
+    list-style: disc inside;
+    color: #2176ae;
+    font-size: 1.1em;
+    margin: 0;
+    padding-left: 18px;
+}
+
+.standalone-btn {
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .eco-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .eco-card {
+        width: 90%;
+        max-width: 400px;
+        height: 480px;
+    }
+}
