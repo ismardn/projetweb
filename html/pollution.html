@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>Préserver nos océans | Pollution</title>
-        <link rel="icon" type="image/png" href="../assets/images/logo.png">
+        <link rel="icon" type="image/png" href="../assets/images/logo.png" />
 
-        <link rel="stylesheet" href="../css/layout.css">
-        
+        <link rel="stylesheet" href="../css/layout.css" />
+        <link rel="stylesheet" href="../css/oceans.css" />
+        <script src="../js/main.js" defer></script>
     </head>
 
-    <body>
+    <body id="pollution-background">
         <header>
             <div class="main-title-div">
-                <h1>L'océan en danger : comprendre, agir, préserver</h1>
-                <img src="../assets/images/logo.png" alt="Logo du site" class="floating-logo">
+                <h1>Pollution marine : comprendre pour mieux agir</h1>
+                <img src="../assets/images/logo.png" alt="Logo du site" class="floating-logo" />
             </div>
 
             <nav>
@@ -26,6 +27,173 @@
                 <a href="./quiz.html">Quiz</a>
             </nav>
         </header>
+
+        <main id="darker-background">
+            <section class="intro">
+                <h2>Polluer les mers, c’est étouffer la planète</h2>
+                <p class="intro-italic">Plastique, pétrole, métaux lourds… la mer souffre en silence.</p>
+                <p>
+                    Les activités humaines rejettent chaque année des millions de tonnes de déchets dans l’océan. Ces pollutions menacent la faune marine, perturbent les équilibres naturels et remontent jusqu’à notre propre assiette.
+                </p>
+            </section>
+
+            <section class="eco-cards">
+                <div class="eco-card" tabindex="0" data-eco="plastique">
+                    <div class="eco-card-inner">
+                        <div class="eco-card-front">
+                            <img src="../assets/images/plastique.jpg" alt="Pollution plastique" class="eco-img" />
+                            <div class="eco-content">
+                                <h3>Pollution plastique</h3>
+                                <p>
+                                    8 millions de tonnes de plastique finissent dans les océans chaque année, menaçant les animaux marins.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
+                            </div>
+                        </div>
+                        <div class="eco-card-back">
+                            <div class="eco-content">
+                                <h3>Pollution plastique</h3>
+                                <p>
+                                    Les déchets plastiques étouffent la vie marine, se fragmentent en microplastiques et contaminent la chaîne alimentaire jusqu’à l’humain. Ils mettent plusieurs centaines d’années à se décomposer.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eco-card" tabindex="0" data-eco="petrole">
+                    <div class="eco-card-inner">
+                        <div class="eco-card-front">
+                            <img src="../assets/images/petrole.jpg" alt="Marée noire" class="eco-img" />
+                            <div class="eco-content">
+                                <h3>Marées noires</h3>
+                                <p>
+                                    Les fuites d’hydrocarbures détruisent les habitats et tuent des milliers d’espèces marines.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
+                            </div>
+                        </div>
+                        <div class="eco-card-back">
+                            <div class="eco-content">
+                                <h3>Marées noires</h3>
+                                <p>
+                                    Les hydrocarbures forment une couche visqueuse en surface, empêchant l’oxygénation et encrassant plumes et branchies. Les zones touchées mettent des décennies à se régénérer.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eco-card" tabindex="0" data-eco="metaux">
+                    <div class="eco-card-inner">
+                        <div class="eco-card-front">
+                            <img src="../assets/images/metaux.jpg" alt="Pollution aux métaux lourds" class="eco-img" />
+                            <div class="eco-content">
+                                <h3>Métaux lourds</h3>
+                                <p>
+                                    Mercure, plomb, cadmium : ces toxiques s’accumulent dans les poissons et contaminent l’alimentation humaine.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
+                            </div>
+                        </div>
+                        <div class="eco-card-back">
+                            <div class="eco-content">
+                                <h3>Métaux lourds</h3>
+                                <p>
+                                    Libérés par l’industrie et les mines, ces substances pénètrent dans l’eau et empoisonnent lentement les organismes marins. Le phénomène de bioaccumulation rend les gros poissons particulièrement dangereux à consommer.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eco-card" tabindex="0" data-eco="engrais">
+                    <div class="eco-card-inner">
+                        <div class="eco-card-front">
+                            <img src="../assets/images/nitrate.jpg" alt="Pollution agricole" class="eco-img" />
+                            <div class="eco-content">
+                                <h3>Pollution agricole</h3>
+                                <p>
+                                    Les nitrates et phosphates des champs provoquent des marées vertes et tuent la vie aquatique.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
+                            </div>
+                        </div>
+                        <div class="eco-card-back">
+                            <div class="eco-content">
+                                <h3>Pollution agricole</h3>
+                                <p>
+                                    Les engrais se déversent dans les rivières et les mers, favorisant la prolifération d’algues toxiques. En se décomposant, ces algues privent l’eau d’oxygène, créant des zones mortes où rien ne survit.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eco-card" tabindex="0" data-eco="sonore">
+                    <div class="eco-card-inner">
+                        <div class="eco-card-front">
+                            <img src="../assets/images/sonar.jpg" alt="Pollution sonore marine" class="eco-img" />
+                            <div class="eco-content">
+                                <h3>Pollution sonore</h3>
+                                <p>
+                                    Le bruit des navires et sonars perturbe la communication et la navigation des cétacés.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
+                            </div>
+                        </div>
+                        <div class="eco-card-back">
+                            <div class="eco-content">
+                                <h3>Pollution sonore</h3>
+                                <p>
+                                    Les sons intenses des activités humaines désorientent baleines et dauphins, provoquent des échouages massifs et perturbent leurs migrations.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eco-card" tabindex="0" data-eco="micro">
+                    <div class="eco-card-inner">
+                        <div class="eco-card-front">
+                            <img src="../assets/images/microplastiques.jpg" alt="Microplastiques" class="eco-img" />
+                            <div class="eco-content">
+                                <h3>Microplastiques</h3>
+                                <p>
+                                    Invisibles à l’œil nu, ils sont ingérés par le plancton et contaminent toute la chaîne alimentaire.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
+                            </div>
+                        </div>
+                        <div class="eco-card-back">
+                            <div class="eco-content">
+                                <h3>Microplastiques</h3>
+                                <p>
+                                    Résidus de plastiques dégradés, ils pénètrent dans tous les organismes vivants, y compris humains. On en retrouve même dans l’eau potable.
+                                </p>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="eco-actions">
+                <h2>Comment limiter la pollution marine ?</h2>
+                <ul>
+                    <li>Réduire l’usage du plastique et du jetable</li>
+                    <li>Privilégier les produits sans pesticides ni engrais chimiques</li>
+                    <li>Soutenir les associations de nettoyage et de sensibilisation</li>
+                    <li>Limiter sa consommation de poissons contaminés</li>
+                    <li>Favoriser les transports maritimes durables</li>
+                </ul>
+            </section>
+        </main>
 
         <footer>
             <p><a href="./about.html">À propos</a></p>

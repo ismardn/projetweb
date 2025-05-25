@@ -8,11 +8,11 @@
         <link rel="icon" type="image/png" href="../assets/images/logo.png">
 
         <link rel="stylesheet" href="../css/layout.css">
-        <link rel="stylesheet" href="../css/ecosystems.css">
-        <script src="../js/ecosystems.js" defer></script>
+        <link rel="stylesheet" href="../css/oceans.css">
+        <script src="../js/main.js" defer></script>
     </head>
 
-    <body>
+    <body id="ecosystems-background">
         <header>
             <div class="main-title-div">
                 <h1>L'océan en danger : comprendre, agir, préserver</h1>
@@ -39,7 +39,6 @@
             </section>
 
             <section class="eco-cards">
-                <!-- Récifs coralliens -->
                 <div class="eco-card" tabindex="0" data-eco="corail">
                     <div class="eco-card-inner">
                         <div class="eco-card-front">
@@ -49,7 +48,7 @@
                                 <p>
                                     Véritables forêts tropicales de la mer, ils abritent 25% de la biodiversité marine. Fragiles, ils sont menacés par le réchauffement, la pollution et la surpêche.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'corail')">En savoir plus</button>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
                             </div>
                         </div>
                         <div class="eco-card-back">
@@ -58,12 +57,12 @@
                                 <p>
                                     Les récifs coralliens sont des structures vivantes construites par des colonies de coraux. Ils protègent les côtes contre l'érosion, servent d'habitat à une multitude d'espèces et sont essentiels à la pêche et au tourisme. Leur survie dépend de la qualité de l'eau et de la température des océans.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'corail')">Retour</button>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Mangroves -->
+
                 <div class="eco-card" tabindex="0" data-eco="mangrove">
                     <div class="eco-card-inner">
                         <div class="eco-card-front">
@@ -73,7 +72,7 @@
                                 <p>
                                     Ces forêts côtières protègent les rivages de l'érosion et servent de nurserie à de nombreuses espèces. Elles stockent aussi beaucoup de carbone.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'mangrove')">En savoir plus</button>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
                             </div>
                         </div>
                         <div class="eco-card-back">
@@ -82,12 +81,12 @@
                                 <p>
                                     Les mangroves sont des écosystèmes uniques situés entre la terre et la mer. Leurs racines immergées offrent un abri à de nombreux poissons et crustacés. Elles filtrent les polluants, stockent le carbone et protègent les populations côtières des tempêtes et inondations.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'mangrove')">Retour</button>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Fonds marins profonds -->
+
                 <div class="eco-card" tabindex="0" data-eco="profond">
                     <div class="eco-card-inner">
                         <div class="eco-card-front">
@@ -97,7 +96,7 @@
                                 <p>
                                     Moins explorés que la Lune, ces zones abritent des espèces extraordinaires et jouent un rôle clé dans le cycle du carbone.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'profond')">En savoir plus</button>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
                             </div>
                         </div>
                         <div class="eco-card-back">
@@ -106,12 +105,12 @@
                                 <p>
                                     Les abysses marins sont caractérisés par l'obscurité, le froid et une pression extrême. Malgré ces conditions, une faune et une flore étonnantes s'y développent, souvent grâce à la bioluminescence. Ces fonds jouent un rôle dans le stockage du carbone et la régulation du climat.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'profond')">Retour</button>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Phytoplancton -->
+
                 <div class="eco-card" tabindex="0" data-eco="phytoplancton">
                     <div class="eco-card-inner">
                         <div class="eco-card-front">
@@ -121,7 +120,7 @@
                                 <p>
                                     Le phytoplancton est à la base de la chaîne alimentaire marine et produit plus de la moitié de l’oxygène de la planète.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'phytoplancton')">En savoir plus</button>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
                             </div>
                         </div>
                         <div class="eco-card-back">
@@ -130,12 +129,12 @@
                                 <p>
                                     Le phytoplancton regroupe des micro-organismes végétaux flottant à la surface des océans. Il absorbe le CO₂ et libère de l’oxygène via la photosynthèse. Sa santé est essentielle pour la vie marine et l’équilibre climatique mondial.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'phytoplancton')">Retour</button>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Herbiers marins -->
+
                 <div class="eco-card" tabindex="0" data-eco="herbier">
                     <div class="eco-card-inner">
                         <div class="eco-card-front">
@@ -145,7 +144,7 @@
                                 <p>
                                     Les herbiers marins sont de véritables nurseries pour de nombreux poissons et absorbent d'importantes quantités de CO₂.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'herbier')">En savoir plus</button>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
                             </div>
                         </div>
                         <div class="eco-card-back">
@@ -154,12 +153,12 @@
                                 <p>
                                     Les herbiers marins sont des plantes à fleurs qui forment de vastes prairies sous-marines. Ils stabilisent les fonds, filtrent l’eau, abritent une grande biodiversité et jouent un rôle crucial dans la lutte contre le changement climatique.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'herbier')">Retour</button>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Banquise polaire -->
+
                 <div class="eco-card" tabindex="0" data-eco="banquise">
                     <div class="eco-card-inner">
                         <div class="eco-card-front">
@@ -169,7 +168,7 @@
                                 <p>
                                     La banquise abrite une faune unique et joue un rôle clé dans la régulation du climat mondial.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'banquise')">En savoir plus</button>
+                                <button class="eco-btn" onclick="flipCard(event)">En savoir plus</button>
                             </div>
                         </div>
                         <div class="eco-card-back">
@@ -178,7 +177,7 @@
                                 <p>
                                     La banquise est une étendue de glace flottante présente aux pôles. Elle sert d’habitat à des espèces comme l’ours polaire et le phoque, réfléchit la lumière solaire et limite le réchauffement climatique.
                                 </p>
-                                <button class="eco-btn" onclick="flipCard(event, 'banquise')">Retour</button>
+                                <button class="eco-btn" onclick="flipCard(event)">Retour</button>
                             </div>
                         </div>
                     </div>

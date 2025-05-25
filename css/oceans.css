@@ -1,5 +1,12 @@
-body {
-    background: url('../assets/images/default_background.jpg') no-repeat center center fixed;
+#pollution-background {
+    background: url('../assets/images/pollution_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+#ecosystems-background {
+    background: url('../assets/images/ecosystems_background.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
