@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>Préserver nos océans | Faits Insolites</title>
-        <link rel="icon" type="image/png" href="../assets/images/logo.png">
+        <link rel="icon" type="image/png" href="../assets/images/general/logo.png" />
 
-        <link rel="stylesheet" href="../css/layout.css">
-        
+        <link rel="stylesheet" href="../css/layout.css" />
+        <link rel="stylesheet" href="../css/funfacts.css" />
+        <script src="../js/main.js" defer></script>
     </head>
 
     <body>
         <header>
             <div class="main-title-div">
                 <h1>L'océan en danger : comprendre, agir, préserver</h1>
-                <img src="../assets/images/logo.png" alt="Logo du site" class="floating-logo">
+                <a href="./index.html">
+                    <img src="../assets/images/general/logo.png" alt="Logo du site" class="floating-logo">
+                </a>
             </div>
 
             <nav>
@@ -26,6 +29,17 @@
                 <a href="./quiz.html">Quiz</a>
             </nav>
         </header>
+
+        <main>
+            <button class="nav-button" id="prev-btn">&#8592;</button>
+
+            <div id="funfact-container">
+                <img id="funfact-image" src="" alt="Fun fact ocean image">
+                <div id="funfact-text"></div>
+            </div>
+            
+            <button class="nav-button" id="next-btn">&#8594;</button>
+        </main>
 
         <footer>
             <p><a href="./about.html">À propos</a></p>

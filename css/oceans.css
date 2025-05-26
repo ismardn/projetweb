@@ -1,15 +1,13 @@
 #pollution-background {
-    background: url('../assets/images/pollution_background.jpg') no-repeat center center fixed;
+    background: url('../assets/images/pollution/pollution_background.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 #ecosystems-background {
-    background: url('../assets/images/ecosystems_background.jpg') no-repeat center center fixed;
+    background: url('../assets/images/ecosystems/ecosystems_background.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .intro {
@@ -152,7 +150,6 @@
     padding: 8px 18px;
     cursor: pointer;
     font-size: 1em;
-    transition: background 0.2s;
     display: inline-block;
     position: relative;
     align-self: center;
@@ -229,4 +226,16 @@
         max-width: 400px;
         height: 480px;
     }
+}
+
+.eco-card.flipped,
+.eco-card.flipped:hover,
+.eco-card.flipped:focus {
+    box-shadow: none !important;
+}
+
+.eco-card,
+.eco-card:hover,
+.eco-card:focus {
+    box-shadow: none !important;
 }
