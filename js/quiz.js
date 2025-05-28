@@ -125,3 +125,70 @@ function showResults(forceTimeOut = false) {
 
     displayFinalScreen(score, forceTimeOut);
 }
+
+function displayFinalScreen(score, timeExpired = false) {
+    document.getElementById("quiz-screen").style.display = "none";
+    const resultContainer = document.getElementById("results-screen");
+    resultContainer.style.display = "block";
+
+    const finalScore = Math.round(score * multiplier * 100) / 100;
+    const endTime = new Date();
+    const timeTakenSec = Math.round((endTime - startTime) / 1000);
+    const currentDateTime = new Date().toLocaleString("fr-FR");
+
+    let resultHTML = `<h2>Résultats</h2>`;
+
+    if (timeExpired) {
+        resultHTML += `<p style="color:red;"><strong>⏰ Temps écoulé !</strong> Résultats enregistrés.</p>`;
+    }
+
+    resultHTML += `
+        <p><strong>Score brut :</strong> ${score.toFixed(2)} / 5</p>
+        <p><strong>Multiplicateur :</strong> x${multiplier}</p>
+        <p><strong>Score final :</strong> ${finalScore}</p>
+        <p><strong>Temps écoulé :</strong> ${timeTakenSec} secondes</p>`;
+
+    resultContainer.innerHTML = resultHTML;
+
+    userAnswers.forEach(ans => {
+        const div = document.createElement("div");
+        div.className = ans.correct ? "correct" : "incorrect";
+        div.innerHTML = `<p><strong>${ans.question}</strong></p>`;
+        div.innerHTML += `<p>Votre réponse : ${ans.userResponse.join(", ") || "Aucune sélection"}</p>`;
+        div.innerHTML += ans.correct
+            ? `<p style="color: green;">Bonne réponse : 1/1</p>`
+            : `<p style="color: red;">Mauvaise réponse : ${ans.partial.toFixed(2)}/1</p>`;
+        resultContainer.appendChild(div);
+    });
+
+    resultContainer.innerHTML += `
+        <button class="return-button" onclick="location.href='./quiz.html'">Retour à la page d'accueil</button>
+    `;
+
+    saveAttemptToLocalStorage(currentDateTime, finalScore, timeTakenSec, multiplier);
+}
+
+function saveAttemptToLocalStorage(date, score, duration, mult) {
+    const attempts = JSON.parse(localStorage.getItem("quizAttempts") || "[]");
+    attempts.unshift({ date, score, duration, mult });
+    localStorage.setItem("quizAttempts", JSON.stringify(attempts));
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    const log = document.querySelector("#attempts-log");
+    const tableBody = document.querySelector("#attempts-table tbody");
+
+    if (log && tableBody) {
+        const attempts = JSON.parse(localStorage.getItem("quizAttempts") || "[]");
+        attempts.forEach(a => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${a.date}</td>
+                <td>${a.score}</td>
+                <td>${a.duration} s</td>
+                <td>x${a.mult}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+});

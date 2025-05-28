@@ -98,5 +98,86 @@
             "85%"
         ],
         "answer": "71%"
+    },
+    {
+        "type": "radio",
+        "question": "Quel est l’animal marin le plus rapide ?",
+        "options": [
+            "Dauphin",
+            "Thon",
+            "Espadon voilier",
+            "Orque"
+        ],
+        "answer": "Espadon voilier"
+    },
+    {
+        "type": "checkbox",
+        "question": "Lesquels de ces éléments peuvent être trouvés dans les marées noires ?",
+        "options": ["Hydrocarbures", "Bitume", "Plomb", "Gaz naturel"],
+        "answer": [
+            "Hydrocarbures",
+            "Bitume"
+        ]
+    },
+        {
+        "type": "radio",
+        "question": "Quel rôle joue le phytoplancton dans l’écosystème océanique ?",
+        "options": [
+            "Il recycle les déchets plastiques",
+            "Il absorbe le méthane produit par les poissons",
+            "Il produit de l’oxygène par photosynthèse",
+            "Il chasse les micro-organismes parasites"
+        ],
+        "answer": "Il produit de l’oxygène par photosynthèse"
+    },
+    {
+        "type": "checkbox",
+        "question": "Quels sont les impacts environnementaux des marées noires ?",
+        "options": [
+            "Empêchent l’oxygénation de l’eau",
+            "Favorisent la reproduction des poissons",
+            "Contaminent les plages et la faune",
+            "Accélèrent la décomposition des plastiques"
+        ],
+        "answer": [
+            "Empêchent l’oxygénation de l’eau",
+            "Contaminent les plages et la faune"
+        ]
+    },
+    {
+        "type": "radio",
+        "question": "Pourquoi les herbiers marins sont-ils essentiels à l'équilibre marin ?",
+        "options": [
+            "Ils consomment les microplastiques",
+            "Ils stabilisent les fonds marins et stockent du CO₂",
+            "Ils produisent des vagues pour réguler la température",
+            "Ils repoussent les espèces invasives"
+        ],
+        "answer": "Ils stabilisent les fonds marins et stockent du CO₂"
+    },
+    {
+        "type": "checkbox",
+        "question": "Quels types de pollution affectent directement la chaîne alimentaire marine ?",
+        "options": [
+            "Pollution sonore",
+            "Microplastiques",
+            "Métaux lourds",
+            "Pollution lumineuse"
+        ],
+        "answer": [
+            "Microplastiques",
+            "Métaux lourds"
+        ]
+    },
+    {
+        "type": "radio",
+        "question": "Quel est le lien entre la pollution agricole et les zones mortes dans l’océan ?",
+        "options": [
+            "Les pesticides tuent les poissons directement",
+            "Les nitrates favorisent les algues qui consomment l’oxygène de l’eau",
+            "Les engrais bloquent la lumière solaire sous l’eau",
+            "Les résidus agricoles absorbent le CO₂ marin"
+        ],
+        "answer": "Les nitrates favorisent les algues qui consomment l’oxygène de l’eau"
     }
 ]

@@ -134,8 +134,6 @@
     justify-content: flex-start;
 }
 
-
-
 .eco-content h3 {
     color: #2176ae;
     margin-bottom: 8px;
@@ -191,9 +189,8 @@
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 8px #0001;
-    padding: 20px 25px 15px 25px;
+    padding: 25px 25px 40px 25px;
     position: relative;
-    padding-bottom: 60px;
 }
 
 .eco-actions h2 {

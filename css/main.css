@@ -24,6 +24,10 @@ body {
     line-height: 1.6;
 }
 
+#authors p {
+    max-width: 60rem;
+}
+
 .videos-area {
     display: flex;
     justify-content: center;
