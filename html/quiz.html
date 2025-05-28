@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>Préserver nos océans | Quiz</title>
-        <link rel="icon" type="image/png" href="../assets/images/general/logo.png">
+        <link rel="icon" type="image/png" href="../assets/images/general/logo.png" />
 
-        <link rel="stylesheet" href="../css/layout.css">
-        
+        <link rel="stylesheet" href="../css/layout.css" />
+        <link rel="stylesheet" href="../css/quiz.css" />
+        <script src="../js/quiz.js" defer></script>
     </head>
 
     <body>
@@ -28,6 +29,41 @@
                 <a href="./quiz.html">Quiz</a>
             </nav>
         </header>
+
+        <main id="quiz-container">
+            <section id="start-screen">
+                <h2>Testez vos connaissances sur la pollution marine !</h2>
+                <label for="time-selector">Choisissez votre temps pour répondre :</label>
+                <select id="time-selector">
+                    <option value="2">30 secondes (x2)</option>
+                    <option value="1.5">60 secondes (x1.5)</option>
+                    <option value="1">2 minutes (x1)</option>
+                    <option value="0.5">Illimité (x0.5)</option>
+                </select>
+                <br>
+                <button id="start-quiz-btn">Commencer le quiz</button>
+            </section>
+
+            <section id="quiz-screen" style="display: none;"></section>
+            <section id="results-screen" style="display: none;"></section>
+
+            <section id="attempts-log">
+                <h3>Historique des essais</h3>
+                <div class="scrollable-table">
+                    <table id="attempts-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Score final</th>
+                                <th>Temps</th>
+                                <th>Multiplicateur</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
 
         <footer>
             <p><a href="./about.html">À propos</a></p>

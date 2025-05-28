@@ -1,0 +1,102 @@
+[
+    {
+        "type": "radio",
+        "question": "Combien de litres d’eau un être humain consomme-t-il en moyenne par jour (directement ou indirectement) ?",
+        "options": [
+            "10 litres",
+            "100 litres",
+            "1 500 litres",
+            "5 000 litres"
+        ],
+        "answer": "1 500 litres"
+    },
+    {
+        "type": "checkbox",
+        "question": "Quels sont des exemples d’écosystèmes marins ?",
+          "options": [
+            "Mangrove",
+            "Désert",
+            "Récif corallien",
+            "Banquise"
+        ],
+        "answer": [
+            "Mangrove",
+            "Récif corallien",
+            "Banquise"
+        ]
+    },
+    {
+        "type": "radio",
+        "question": "Quel gaz est le plus responsable de l’effet de serre ?",
+        "options": [
+            "Dioxyde de carbone (CO₂)",
+            "Oxygène (O₂)",
+            "Hydrogène",
+            "Azote (N₂)"
+        ],
+        "answer": "Dioxyde de carbone (CO₂)"
+    },
+    {
+        "type": "radio",
+        "question": "Quel est le plus grand océan du monde ?",
+        "options": [
+            "Océan Atlantique",
+            "Océan Indien",
+            "Océan Pacifique",
+            "Océan Arctique"
+        ],
+        "answer": "Océan Pacifique"
+    },
+    {
+        "type": "checkbox",
+        "question": "Parmi ces espèces, lesquelles vivent dans les océans ?",
+        "options": [
+            "Hippocampe",
+            "Narval",
+            "Toucan",
+            "Raie manta"
+        ],
+        "answer": [
+            "Hippocampe",
+            "Narval",
+            "Raie manta"
+        ]
+    },
+    {
+        "type": "radio",
+        "question": "Quel est le principal danger des microplastiques ?",
+        "options": [
+            "Ils créent du bruit",
+            "Ils sont visibles à l’œil nu",
+            "Ils entrent dans la chaîne alimentaire",
+            "Ils colorent l’eau"
+        ],
+        "answer": "Ils entrent dans la chaîne alimentaire"
+    },
+    {
+        "type": "checkbox",
+        "question": "Quelles actions individuelles peuvent réduire la pollution marine ?",
+        "options": [
+            "Ramasser les déchets sur la plage",
+            "Utiliser des produits réutilisables",
+            "Acheter des produits suremballés",
+            "Réduire la consommation de poisson"
+        ],
+        "answer": [
+            "Ramasser les déchets sur la plage",
+            "Utiliser des produits réutilisables",
+            "Réduire la consommation de poisson"
+        ]
+    },
+    {
+        "type": "radio",
+        "question": "Combien de pourcentage de la surface de la Terre est recouverte par les océans ?",
+        "options": [
+            "50%",
+            "60%",
+            "71%",
+            "85%"
+        ],
+        "answer": "71%"
+    }
+]
