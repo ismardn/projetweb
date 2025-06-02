@@ -10,7 +10,12 @@ document.getElementById("start-quiz-btn").addEventListener("click", async () => 
     multiplier = parseFloat(document.getElementById("time-selector").value);
     const res = await fetch("../json/quizData.json");
     quizData = await res.json();
+
     selectedQuestions = quizData.sort(() => 0.5 - Math.random()).slice(0, 5);
+    /* Mélange les questions en donnant à sort() un nombre aléatoire entre -0.5 et +0.5 : 
+       si Math.random() < 0.5, on retourne un nombre négatif -> l'élément passe avant,
+       si > 0.5, on retourne un nombre positif -> il passe après. Cela crée donc un tri aléatoire. */
+
     startTime = new Date();
     setupTimer();
     showQuiz();
@@ -66,8 +71,17 @@ function showQuiz() {
         qDiv.innerHTML = `<h3>${q.question}</h3>`;
 
         q.options.forEach((opt, i) => {
-            const inputType = q.type === "checkbox" ? "checkbox" : "radio";
-            const nameAttr = q.type === "radio" ? `name="q${idx}"` : `name="q${idx}-${i}"`;
+            let inputType;
+            let nameAttr;
+
+            if (q.type === "checkbox") {
+                inputType = "checkbox";
+                nameAttr = `name="q${idx}-${i}"`;
+            } else {
+                inputType = "radio";
+                nameAttr = `name="q${idx}"`;
+            }
+
             qDiv.innerHTML += `
                 <label>
                     <input type="${inputType}" ${nameAttr} value="${opt}">
@@ -101,7 +115,12 @@ function showResults(forceTimeOut = false) {
             }
         });
 
-        const correctAnswers = Array.isArray(q.answer) ? q.answer : [q.answer];
+        let correctAnswers;
+        if (Array.isArray(q.answer)) {
+            correctAnswers = q.answer;
+        } else {
+            correctAnswers = [q.answer];
+        }
         let qScore = 0;
 
         if (q.type === "checkbox") {
@@ -110,7 +129,12 @@ function showResults(forceTimeOut = false) {
             const wrongSelected = userResponse.filter(ans => !correctAnswers.includes(ans)).length;
             qScore = Math.max(0, (goodSelected - wrongSelected) / totalGood);
         } else {
-            qScore = JSON.stringify(userResponse.sort()) === JSON.stringify(correctAnswers.sort()) ? 1 : 0;
+            let qScore;
+            if (JSON.stringify(userResponse.sort()) === JSON.stringify(correctAnswers.sort())) {
+                qScore = 1;
+            } else {
+                qScore = 0;
+            }
         }
 
         score += qScore;
@@ -139,7 +163,7 @@ function displayFinalScreen(score, timeExpired = false) {
     let resultHTML = `<h2>Résultats</h2>`;
 
     if (timeExpired) {
-        resultHTML += `<p style="color:red;"><strong>⏰ Temps écoulé !</strong> Résultats enregistrés.</p>`;
+        resultHTML += `<p style="color:red;"><strong>Temps écoulé !</strong> Résultats enregistrés.</p>`;
     }
 
     resultHTML += `
@@ -152,12 +176,29 @@ function displayFinalScreen(score, timeExpired = false) {
 
     userAnswers.forEach(ans => {
         const div = document.createElement("div");
-        div.className = ans.correct ? "correct" : "incorrect";
+
+        if (ans.correct) {
+            div.className = "correct";
+        } else {
+            div.className = "incorrect";
+        }
+
         div.innerHTML = `<p><strong>${ans.question}</strong></p>`;
-        div.innerHTML += `<p>Votre réponse : ${ans.userResponse.join(", ") || "Aucune sélection"}</p>`;
-        div.innerHTML += ans.correct
-            ? `<p style="color: green;">Bonne réponse : 1/1</p>`
-            : `<p style="color: red;">Mauvaise réponse : ${ans.partial.toFixed(2)}/1</p>`;
+
+        let userResp;
+        if (ans.userResponse.length > 0) {
+            userResp = ans.userResponse.join(", ");
+        } else {
+            userResp = "Aucune sélection";
+        }
+        div.innerHTML += `<p>Votre réponse : ${userResp}</p>`;
+
+        if (ans.correct) {
+            div.innerHTML += `<p style="color: green;">Bonne réponse : 1/1</p>`;
+        } else {
+            div.innerHTML += `<p style="color: red;">Mauvaise réponse : ${ans.partial.toFixed(2)}/1</p>`;
+        }
+
         resultContainer.appendChild(div);
     });
 

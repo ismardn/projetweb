@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Préserver nos océans | Quiz</title>
-        <link rel="icon" type="image/png" href="../assets/images/general/logo.png" />
+        <link rel="icon" type="image/png" href="../assets/images/general/logo.png">
 
-        <link rel="stylesheet" href="../css/layout.css" />
-        <link rel="stylesheet" href="../css/quiz.css" />
+        <link rel="stylesheet" href="../css/layout.css">
+        <link rel="stylesheet" href="../css/quiz.css">
+        
         <script src="../js/quiz.js" defer></script>
     </head>
 
@@ -35,17 +36,17 @@
                 <h2>Testez vos connaissances sur les écosystèmes marins !</h2>
                 <label for="time-selector">Choisissez votre temps pour répondre :</label>
                 <select id="time-selector">
-                    <option value="2">30 secondes (x2)</option>
-                    <option value="1.5">60 secondes (x1.5)</option>
-                    <option value="1">2 minutes (x1)</option>
-                    <option value="0.5">Illimité (x0.5)</option>
+                    <option value="2">30 secondes (x2 score)</option>
+                    <option value="1.5">60 secondes (x1.5 score)</option>
+                    <option value="1">2 minutes (x1 score)</option>
+                    <option value="0.5">Illimité (x0.5 score)</option>
                 </select>
-                <br>
+                <p>Moins de temps = Plus de points !</p>
                 <button id="start-quiz-btn">Commencer le quiz</button>
             </section>
 
-            <section id="quiz-screen" style="display: none;"></section>
-            <section id="results-screen" style="display: none;"></section>
+            <div id="quiz-screen" style="display: none;"></div>
+            <div id="results-screen" style="display: none;"></div>
 
             <section id="attempts-log">
                 <h3>Historique des essais</h3>
