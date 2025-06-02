@@ -5,10 +5,10 @@
         "options": [
             "10 litres",
             "100 litres",
-            "1 500 litres",
-            "5 000 litres"
+            "150 litres",
+            "500 litres"
         ],
-        "answer": "1 500 litres"
+        "answer": "150 litres"
     },
     {
         "type": "checkbox",

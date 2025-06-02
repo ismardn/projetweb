@@ -129,7 +129,6 @@ function showResults(forceTimeOut = false) {
             const wrongSelected = userResponse.filter(ans => !correctAnswers.includes(ans)).length;
             qScore = Math.max(0, (goodSelected - wrongSelected) / totalGood);
         } else {
-            let qScore;
             if (JSON.stringify(userResponse.sort()) === JSON.stringify(correctAnswers.sort())) {
                 qScore = 1;
             } else {
